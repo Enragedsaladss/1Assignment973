@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -36,13 +35,19 @@ int split(char inStr[],  char token[][MAXWORD], char fs[])
 }
 
 // ------------------------------
-int main (int argc, char *argv[])
-{
-    // test with
-    // char token[MAX_NTOKEN][MAXWORD];
-    // char inStr[]= "timeout 10 do_work bash.man 7";
-    // ...
+int main (int argc, char *argv[]) {
+	// test with
+    	
+	char fs[] = " \t";
+    	char token[MAX_NTOKEN][MAXWORD];
+    	char inStr[]= "timeout 10 do_work bash.man 7";
+    	// ...
+	printf ("Test function split()\n");
 
-    printf ("Test function split()\n");
+        int numTokStored = split(inStr, token, fs);
+        printf("Token Stored:: %d\n", numTokStored);
 
+        for(int i = 0; i < numTokStored; i++) {
+                printf("Token %d: %s\n", i, token[i]);
+        }      
 }
