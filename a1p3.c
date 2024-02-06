@@ -79,9 +79,9 @@ int main(int argc, char *argv[]) {
         char fs[] = " \n";
 
         while (fgets(line, sizeof(line), stdin) != NULL) {
-                if (i == 5) {
-                        break;
-                }
+                //if (i == 5) {
+                //        break;
+                //}
                 if (line[0] == '#' || line[0] == '\n') {
                         continue;
                 }
