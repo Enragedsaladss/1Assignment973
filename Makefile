@@ -11,17 +11,17 @@ a1p3: a1p3.c
 clean:
 	rm -f a1p2 a1p3 *.tar *.tar.gz
 
-run-w: a1p2
+a1p2-w: a1p2
 	./a1p2 w
 
-run-s: a1p2
+a1p2-s: a1p2
 	./a1p2 s
 
 tar:
-	tar -cvf genereux-a1.tar *
+	tar -cvf Genereux-a1.tar *
 
 tar.gz:
-	tar -czvf genereux-a1.tar.gz *
+	tar -czvf Genereux-a1.tar.gz *
 
 .PHONY: 
 	all clean tar tar.gz

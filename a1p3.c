@@ -11,6 +11,8 @@
 #define MAXWORD 20 // Max # of characters in any token
 #define NPROC 5 // Max # of commands in a test file
 
+
+// From earlier in assignment
 int split(char inStr[],  char token[][MAXWORD], char fs[])
 {
         int    i, count;
@@ -37,10 +39,10 @@ int split(char inStr[],  char token[][MAXWORD], char fs[])
                 return(count);
 }
 
-
+// From textbook
 static void pr_times(clock_t real, struct tms *tmsstart, struct tms *tmsend) {
         static long clktck = 0;
-        if (clktck == 0) /* fetch clock ticks per second first time */
+        if (clktck == 0)
         clktck = sysconf(_SC_CLK_TCK);
 
         printf(" real: %7.2f\n", real / (double) clktck);
@@ -77,11 +79,11 @@ int main(int argc, char *argv[]) {
         char lineArray[NPROC][MAXLINE];
         char token[MAXNTOKEN][MAXWORD];
         char fs[] = " \n";
-
+	
         while (fgets(line, sizeof(line), stdin) != NULL) {
-                //if (i == 5) {
-                //        break;
-                //}
+                if (i == 5) {
+                        break;
+                }
                 if (line[0] == '#' || line[0] == '\n') {
                         continue;
                 }
